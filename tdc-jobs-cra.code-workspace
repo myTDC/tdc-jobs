@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"prettier.stylelintIntegration": true,
+		"prettier.arrowParens": "always",
+		"prettier.requireConfig": true
+	}
+}

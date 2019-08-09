@@ -1,0 +1,8 @@
+{
+  "editor.formatOnSave": true,
+  "prettier.stylelintIntegration": true,
+  "prettier.eslintIntegration": true,
+  "prettier.arrowParens": "always",
+  "prettier.requireConfig": true,
+  "prettier.useTabs": true
+}
