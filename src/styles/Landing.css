@@ -1,21 +1,170 @@
-:root {
-	--app-color-primary: #162432;
-	--app-gradient-primary: linear-gradient(to top, #162432, #32485e);
-}
+/* size */
+/* position */
+/* styling */
+/* children */
 
 .landingContainer {
 	width: 100%;
 	height: 100%;
+	display: grid;
+	grid-template-rows: repeat(auto-fill, minmax(4vmin, 1fr));
+	grid-gap: 16px;
+	grid-template-areas:
+	'heroContainer'
+	'intro';
+}
+
+.landingHeroContainer {
+
+	/* size */
+	width: 100%;
+	height: 100%;
+	max-height: calc(100vh - 88px);
+
+	/* position */
+	grid-area: heroContainer;
+
+	/* styling */
+	/* children */
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: repeat(3, 1fr);
+	justify-items: stretch;
+	align-items: stretch;
+
+	/* grid-template-areas:
+	'hero'
+	'hero'
+	'cta'; */
+}
+
+.landingHeroImage {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: 50% 100%;
+	grid-column: 1/-1;
+	grid-row: 1/-1;
+	filter: saturate(1.2);
+}
+
+.landingHeroCTA {
+
+	/* size */
+	width: 100%;
+	height: 240px;
+	padding: 1rem;
+
+	/* position */
+	grid-column: 1/-1;
+	grid-row: -2/-1;
+
+	/* styling */
+	align-self: stretch;
+	color: #010203;
+	z-index: 15;
+	background: linear-gradient(to bottom, #00000000, rgba(0, 0, 0, 0.4));
+
+	/* children */
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-
 	align-items: center;
 }
 
-.landingForm {
+.landingHeroCTAText {
+	width: 100%;
+	font-size: 1.5rem;
+	line-height: 1.1em;
+	font-family: 'Noto Sans';
+	font-weight: 500;
+	color: whitesmoke;
+	filter: contrast(2);
 
-	/* display: flex; */
+	/* filter: drop-shadow(0.1px 0.1px 0.8px rgba(255, 255, 255, 0.6)); */
+}
+
+.landingHeroCTAButton {
+	padding: 1rem 2rem;
+	border-style: none;
+	border-radius: 4px;
+	font-weight: 800;
+	font-size: 1.4rem;
+	background-color: var(--app-action-primary-color);
+	border-color: var(--app-action-primary-color-2);
+	box-shadow: 1px 1px 4px rgba(40, 60, 80, 0.4);
+}
+
+.landingHeroCTAButton:hover {
+	animation: jump 0.6s ease infinite alternate;
+}
+
+.highlighter {
+	padding: 0 2px;
+	border-bottom: 1px solid var(--app-highlighter-color);
+	box-shadow: inset 0 -7px 0 var(--app-highlighter-color);
+}
+
+.highlighter:hover {
+	border-bottom: 2px solid var(--app-highlighter-color);
+	box-shadow: inset 0 -6px 0 var(--app-highlighter-color);
+	border-radius: 2px;
+	cursor: pointer;
+
+	/* animation: jump 0.4s ease infinite alternate; */
+}
+
+.highlighter:hover::before {
+	content: 'Ad';
+}
+
+.landingIntro {
+	grid-area: intro;
+	padding: 0 2rem;
+}
+
+@media only screen and (min-width: 481px) {
+	.landingContainer {
+		height: 100%;
+		grid-template-columns: repeat(2, minmax(600px, 1fr));
+		grid-template-rows: repeat(auto-fill, minmax(720px, 1fr));
+		grid-template-areas:
+		'heroContainer heroContainer'
+		'intro intro';
+	}
+
+	.landingHeroContainer {
+		height: 100%;
+		max-height: calc(100vh - 64px);
+		grid-template-columns: 100%;
+		grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+		grid-template-areas:
+		'hero'
+		'hero'
+		'cta';
+	}
+
+	.landingHeroCTAText {
+		font-size: 2rem;
+		width: 100%;
+		font-family: 'PT Sans';
+		font-weight: 700;
+	}
+
+	/* .landingForm {
+		width: 60%;
+		margin: 0 auto;
+		text-align: left;
+	}
+
+	.landingInputMainContainer {
+	}
+
+	.landingInputMain {
+		font-size: 2rem;
+	} */
+}
+
+/* .landingForm {
 	width: 92%;
 	text-align: left;
 }
@@ -23,26 +172,22 @@
 .landingInputMainContainer {
 	width: 100%;
 	height: 80px;
-	font-size: 2rem;
 	display: flex;
 	justify-content: space-between;
 	margin: 1rem 0 0;
 	padding: 0.5rem;
-
-	/* background-color: var(--app-color-primary); */
-	background: var(--app-gradient-primary);
+	background-color: #000000;
+	border: solid 1px #fefefef0;
 }
 
 .landingInputMain {
 	display: flex;
 	width: 80%;
-
-	/* background-color: inherit; */
 	background: none;
+	font-size: 1.4rem;
 	letter-spacing: 2px;
 	color: white;
 	border: none;
-	font-size: 2rem;
 	padding: 0.5rem;
 }
 
@@ -53,23 +198,6 @@
 .landingformButton {
 	width: 64px;
 	padding: 0.5rem;
-
-	/* background-color: var(--app-color-primary); */
 	border: none;
 	border-left: 1px solid #00000050;
-}
-
-@media only screen and (min-width: 481px) {
-	.landingContainer {
-		height: 100%;
-	}
-
-	.landingForm {
-		width: 60%;
-		margin: 0 auto;
-		text-align: left;
-	}
-
-	.landingInputMainContainer {
-	}
-}
+} */

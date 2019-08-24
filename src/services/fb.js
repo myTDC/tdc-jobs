@@ -4,14 +4,23 @@ import "@firebase/firestore"
 import "@firebase/storage"
 import "@firebase/messaging"
 
-export const firebaseConfig = {
-  apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: process.env.REACT_APP_AUTHDOM,
-  databaseURL: process.env.REACT_APP_DBURL,
-  projectId: process.env.REACT_APP_PROJID,
-  storageBucket: process.env.REACT_APP_SBUCKET,
-  messagingSenderId: process.env.REACT_APP_MSGSNDR,
+const firebaseConfig = {
+  apiKey: "AIzaSyAd1jN8Prw4bUDCMvFN0QGZy0WRqEq8K1k",
+  authDomain: "tdc-workshsops.firebaseapp.com",
+  databaseURL: "https://tdc-workshsops.firebaseio.com",
+  projectId: "tdc-workshsops",
+  storageBucket: "tdc-workshsops.appspot.com",
+  messagingSenderId: "115568196506",
 }
+
+// export const firebaseConfig = {
+//   apiKey: process.env.REACT_APP_API_KEY,
+//   authDomain: process.env.REACT_APP_AUTHDOM,
+//   databaseURL: process.env.REACT_APP_DBURL,
+//   projectId: process.env.REACT_APP_PROJID,
+//   storageBucket: process.env.REACT_APP_SBUCKET,
+//   messagingSenderId: process.env.REACT_APP_MSGSNDR,
+// }
 
 const app = firebase.initializeApp(firebaseConfig)
 

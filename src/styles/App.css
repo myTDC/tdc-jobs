@@ -1,3 +1,11 @@
+:root {
+	--app-color-primary: #162432;
+	--app-gradient-primary: linear-gradient(to top, #162432, #32485e);
+	--app-highlighter-color: #ffeb3b;
+	--app-action-primary-color: #fff176;
+	--app-action-primary-color-2: #ffeb3b;
+}
+
 .App-container {
 	background-color: whitesmoke;
 }
@@ -7,23 +15,94 @@
 }
 
 .Pages-container {
-	background-color: #282c34;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
 	font-size: calc(10px + 2vmin);
-	color: white;
+	background-color: whitesmoke;
+
+	/* background-color: #282c34; */
+	/* color: white; */
+}
+
+button,
+.btn,
+.button {
+	padding: 2vmin 4vmin;
 }
 
 .App-link {
 	color: #16df64;
 }
 
+.WIP {
+	border: 2px dashed darkorange;
+}
+
+.poplink {
+	color: blue;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.poplink::after {
+	content: '';
+	width: 8px;
+	height: 8px;
+	color: grey;
+}
+
 @media only screen and (min-width: 481px) {
 	.compContainer {
 		height: 80px;
 		flex-direction: row;
+	}
+}
+
+/* JUMP */
+.jump_auto {
+	animation: 0.5s jump ease infinite alternate;
+}
+
+.jump_hover:hover {
+	animation: 0.7s jump ease infinite alternate;
+}
+
+@keyframes jump {
+	0% {
+		transform: scale(1);
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+	}
+
+	100% {
+		transform: scale(1.05);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	}
+}
+
+/* PULSE */
+.pulse_auto {
+	animation: pulse 0.4s ease infinite alternate;
+}
+
+.pulse_hover:hover {
+	animation: pulse 0.4s ease infinite alternate;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+
+		/* box-shadow: 0 2px 2px rgba(0,0,0,.2); */
+		border-radius: 2px;
+	}
+
+	100% {
+		transform: scale(1.05);
+
+		/* box-shadow: 0 2px 2px rgba(0,0,0,.2); */
+		border-radius: 8px;
 	}
 }

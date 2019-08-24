@@ -1,20 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import NavLink from './NavLink';
-import { Link } from '@reach/router';
+import { Link, navigate } from '@reach/router';
+import { useSelector } from 'react-redux';
 
-import JobsLogo from '../res/jsx/JobsLogo';
-import '../styles/NavBar.css';
-import menuIcon from '../res/icons/ic_nav_menu_24px.svg';
-import userAvatar from '../res/avatars/avatar-female-tshirt.svg';
-// import logo from '../res/logo/tdc-jobs-onlight.svg';
+import '../../styles/NavBar.css';
+import menuIcon from '../../res/icons/ic_nav_menu_24px.svg';
+import userAvatar from '../../res/avatars/avatar-female-tshirt.svg';
+import worksLogo from '../../res/logo/tdc-reach-full-onlight.svg';
 
 function UserProfiler(props) {
+	const no_user = {
+		heading: [''],
+		metaData: ['', ''],
+		sectionData: {
+			subHeading: [''],
+		},
+	};
+	const user = useSelector(({ user }) => user || no_user);
+
 	return (
 		<aside className='userProfiler'>
-			<Link to='/dash/'>
+			{user ? (<Link to='/dash/'>
 				<img className='userAvatar' src={userAvatar} alt='Button to access user dashboard' />
-			</Link>
+			</Link>) : (
+					<Link to='/log-in' className="navbarLoginbtn">Login</Link>
+				)}
 		</aside>
 	);
 }
@@ -31,11 +42,16 @@ const Navbar = (props) => {
 					alt='Button to toggle the navigation drawer or sidebar'
 				/>
 
-				<Link to='/'>
-					<JobsLogo
+				<Link className='navBarHomeLink' to='/'>
+					{/* <JobsLogo
 						className='logo'
 						alt='🗲 Logo of TDC Jobs 🗲'
 						// onClick={toggleDrawer} //() => alert('An image was clicked')
+					/> */}
+					<img
+						src={worksLogo}
+						className='logo'
+						alt='🗲 Logo of TDC Jobs 🗲'
 					/>
 				</Link>
 				{isMobile ? <UserProfiler /> : null}

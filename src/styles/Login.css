@@ -1,0 +1,110 @@
+.login_container {
+	width: 100%;
+	height: max-content;
+	min-height: calc(100vh - 64px);
+	background: url(../res/backs/spacer-back-optim.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: 'Segoe UI';
+	font-size: calc(10px + 1vmin);
+	line-height: 1.2em;
+}
+
+.login_info_container {
+	background-color: rgba(252, 252, 252, 0.9);
+	width: 88%;
+	min-width: 320px;
+	max-width: 600px;
+	margin: 8vmin auto;
+	padding: 8vmin;
+	filter: contrast(1.15);
+	box-shadow: 2px 2px 4px #eeeeee1e;
+}
+
+/* .login_info_container::after {
+	content: url(../res/backs/spacer-back-optim.svg);
+	width: 88%;
+	min-width: 320px;
+	max-width: 600px;
+	background-color: rgba(252, 252, 252, 0.7);
+	background: ;
+	background-size: cover;
+	background-repeat: no-repeat;
+	filter: blur(0.4px);
+} */
+
+.login_title {
+	font-size: 4rem;
+	margin-top: 4vmin;
+}
+
+.login_intro {
+	word-wrap: break-word;
+	margin: 4vmin 0;
+
+	/* color: whitesmoke; */
+	/* font-size: 1.2rem; */
+	/* line-height: 1.1em; */
+}
+
+.login_gogl {
+	border-style: none;
+
+	/* background-color: #ff1744;
+	border-color: #ff1744; */
+	background: linear-gradient(60deg, #ff5252, #f50057);
+	border-radius: 3px;
+	color: whitesmoke;
+	font-weight: 500;
+	font-size: 1.2rem;
+	padding: 2vmin 4vmin;
+	cursor: pointer;
+}
+
+.login_gogl:hover {
+	animation: jump 0.4s ease infinite alternate;
+}
+
+.login_info {
+	margin-top: 6vmin;
+	padding: 0;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	color: #808080;
+	text-align: start;
+}
+
+.login_info_item {
+	display: flex;
+	margin: 0.5vmin 0;
+	padding: 12px 6px;
+	filter: contrast(1.4);
+	border-bottom: 1.2px solid #2222221e;
+	font-size: 0.8em;
+	line-height: 1.3em;
+
+	/* box-shadow: 1px 1px 3px #2222221e; */
+}
+
+.login_info_item_id {
+	width: 2rem;
+	height: 2rem;
+	margin: auto 12px auto 0;
+	padding: 2px 9px;
+	color: #ff1744;
+	font-size: 1.2em;
+	font-weight: 500;
+	border: 2px solid #ff5252;
+	border-radius: 8rem;
+}
+
+.login_acknowledgement {
+	width: 100%;
+	margin: 4px auto;
+	color: rgba(46, 46, 46, 0.6);
+	font-size: 0.8rem;
+	line-height: 1.6em;
+	font-style: italic;
+	font-weight: 400;
+}

@@ -1,7 +1,7 @@
 import { configureStore, getDefaultMiddleware } from 'redux-starter-kit';
 import logger from 'redux-logger';
 import throttle from 'lodash/throttle';
-// import auth from './reducers/auth';
+import auth from './reducers/auth';
 // import admin from './reducers/admin';
 // import feedback from './reducers/feedback';
 // import tools from './reducers/tools';
@@ -32,13 +32,14 @@ export const saveState = (state) => {
 const initState = loadState();
 const store = configureStore({
 	reducer: {
-		// auth: auth,
+		auth: auth,
 		// admin: admin,
 		// feedback: feedback,
 		// tools: tools,
 		// users: users,
 	},
 	middleware: [logger, ...getDefaultMiddleware()],
+	// middleware: [...getDefaultMiddleware()],
 	preloadedState: initState,
 });
 

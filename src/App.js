@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 // import { useDispatch } from 'react-redux';
 import './styles/App.css';
 
-import Navbar from './components/NavBar';
+import Navbar from './components/navigation/NavBar';
 import { useWindowWidth } from './shared/commonHooks';
 import Drawer from './components/drawer/Drawer';
 
@@ -15,6 +15,7 @@ const Dashboard = lazy(() => import('./pages/Dashboard'));
 const Learn = lazy(() => import('./pages/Learn'));
 const Counselling = lazy(() => import('./pages/Counselling'));
 const ProfileBuilder = lazy(() => import('./pages/ProfileBuilder'));
+const Login = lazy(() => import('./pages/Login'));
 const Page404 = lazy(() => import('./pages/Page404'));
 
 //################################# Routes ################################
@@ -22,7 +23,7 @@ const displayRoutes = {
 	Home: { name: 'Home', path: '/' },
 	Counselling: { name: 'Counselling', path: '/get-counsel' },
 	Learn: { name: 'Learn', path: '/start-learning' },
-	Dash: { name: 'Dash', path: '/dash/', requiresAuth: true },
+	Dash: { name: 'Dashboard', path: '/dash/', requiresAuth: true },
 };
 
 const systemRoutes = {
@@ -31,7 +32,7 @@ const systemRoutes = {
 	Jobs: { name: 'Jobs', path: '/jobs' },
 	Apply: { name: 'Apply', path: '/apply-now' },
 	Feedback: { name: 'Feedback', path: '/feedback/' },
-	ProfileBuilder: { name: 'ProfileBuilder', path: '/profile-builder/:typeId', requiresAuth: true },
+	Profiler: { name: 'ProfileBuilder', path: '/profiler/', requiresAuth: true },
 };
 //################################# End of Routes ################################
 
@@ -58,6 +59,7 @@ function App() {
 			{isDrawerOpen && (
 				<Drawer
 					routes={Object.values(displayRoutes)}
+					sysRoutes={Object.values(systemRoutes)}
 					toggleDrawer={handleDrawerToggle}
 					isOpen={isDrawerOpen}
 				/>
@@ -70,7 +72,8 @@ function App() {
 						<Learn path={displayRoutes.Learn.path} />
 						<Dashboard path={displayRoutes.Dash.path} />
 						<Counselling path={displayRoutes.Counselling.path} />
-						<ProfileBuilder path={systemRoutes.ProfileBuilder.path} />
+						<ProfileBuilder path={systemRoutes.Profiler.path} />
+						<Login path={systemRoutes.Login.path} />
 						{/* <Learn path='/works' />
 					<Learn path='/learn' />
 					<Build path={routes.Build.path} />
